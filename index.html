@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>reveal.js</title>
+
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/custom.css" id="theme" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link
+      rel="stylesheet"
+      href="plugin/highlight/monokai.css"
+      id="highlight-theme"
+    />
+
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h1 style="font-size: 1.7em;">
+            Responsive design techniques on the web
+          </h1>
+          <h4 style="text-transform: capitalize; font-weight: 400;">
+            - Thabiso Magwaza
+          </h4>
+        </section>
+        <section>
+          <h2>Outline</h2>
+          <ol class="list">
+            <li class="fragment fade-right">
+              Background - tragic backstory 😔
+            </li>
+            <li class="fragment fade-right">Theory 🥱</li>
+            <li class="fragment fade-right">Code - YAAAY! 🥳🦾😁</li>
+          </ol>
+        </section>
+        <section>
+          <img style="width: 100%;" src="./img/boo.png" alt="boo meme" />
+        </section>
+        <section data-auto-animate>
+          <h2>Background</h2>
+          <blockquote
+            class="fragment fade-right quote"
+            style="width: 90%; padding: 20px;"
+          >
+            &quot;Any application that can be written in JavaScript, will
+            eventually be written in JavaScript.&quot;
+            <span>
+              — Jeff Atwood, Author, Entrepreneur, Cofounder of StackOverflow
+            </span>
+          </blockquote>
+        </section>
+        <section data-auto-animate>
+          <h2>Background</h2>
+          <blockquote class="quote" style="width: 90%; padding: 20px;">
+            &quot;Any application that can run in the browser, will eventually
+            be ran in the broswer.&quot;
+            <span>
+              — Thabiso Magwaza 😎
+            </span>
+          </blockquote>
+        </section>
+        <section class="logo-animations" data-auto-animate>
+          <h2>Background</h2>
+          <img
+            class="logo logo-chrome"
+            src="./img/Google_Chrome-Logo.wine.svg"
+            alt="chrome logo"
+          />
+          <img
+            class="logo logo-explosion"
+            src="./img/explosion-bomb-svgrepo-com.svg"
+            alt="explosion"
+          />
+          <img
+            class="logo logo-responsive"
+            src="./img/responsive.svg"
+            alt="responsive"
+          />
+          <img class="logo logo-cloud" src="./img/cloud.svg" alt="cloud" />
+          <svg class="logo logo-5g">
+            <use xlink:href="./img/sprite.svg#5g"></use>
+          </svg>
+        </section>
+        <section>
+          <section data-auto-animate>
+            <h2>The pillars Responsive Web Design</h2>
+          </section>
+          <section data-auto-animate>
+            <h2>The pillars Responsive Web Design</h2>
+            <ol class="list">
+              <li class="fragment fade-right">Relative Units</li>
+              <li class="fragment fade-right">Responsive Images</li>
+              <li class="fragment fade-right">Fluid Layouts</li>
+              <li class="fragment fade-right">Media Queries</li>
+            </ol>
+          </section>
+        </section>
+        <section>
+          <section data-auto-animate>
+            <h2>Relative Units</h2>
+          </section>
+          <section data-auto-animate>
+            <h2>Relative Units</h2>
+            <img
+              style="max-width: 100%; max-height: 100%;"
+              src="./img/value-parsing.PNG"
+              alt="value-parsing"
+            />
+          </section>
+          <section data-auto-animate>
+            <h2>Relative Units</h2>
+            <table class="table">
+              <tr>
+                <th style="width: 12%;">Unit</th>
+                <th>Description</th>
+              </tr>
+              <tr class="fragement fade-up">
+                <td>em</td>
+                <td>
+                  Relative to the font-size of the element (2em means 2 times
+                  the size of the current font)
+                </td>
+              </tr>
+              <tr class="fragement fade-up">
+                <td>ex</td>
+                <td>
+                  Relative to the x-height of the current font (rarely used)
+                </td>
+              </tr>
+              <tr>
+                <td>ch</td>
+                <td>Relative to the width of the &quot;0&quot; (zero)</td>
+              </tr>
+              <tr>
+                <td>rem</td>
+                <td>Relative to font-size of the root element</td>
+              </tr>
+              <tr>
+                <td>vw</td>
+                <td>Relative to 1% of the width of the viewport*</td>
+              </tr>
+              <tr>
+                <td>vh</td>
+                <td>Relative to 1% of the height of the viewport*</td>
+              </tr>
+              <tr>
+                <td>vmin</td>
+                <td>Relative to 1% of viewport's* smaller dimension</td>
+              </tr>
+              <tr>
+                <td>vmax</td>
+                <td>Relative to 1% of viewport's* larger dimension</td>
+              </tr>
+              <tr>
+                <td>%</td>
+                <td>Relative to the parent element</td>
+              </tr>
+            </table>
+          </section>
+        </section>
+        <section data-auto-animate><h2>Responsive Images</h2></section>
+        <section data-auto-animate>
+          <h2>Responsive Images</h2>
+          <p class="fade-right" style="font-size: 30px;">
+            The goal of responsive images is to serve the
+            <span class="text-red">right image</span> to the
+            <span class="text-red">right screen size and device</span>, in order
+            to avoid downloading unnecessary large images on smaller screens.
+          </p>
+          <p
+            class="fragment fade-right"
+            style="font-size: 30px; margin-top: 50px;"
+          >
+            It involves concepts such as
+            <span class="text-red">pixel switching</span>,
+            <span class="text-red">density swicting</span> and
+            <span class="text-red">art direction</span>.
+          </p>
+
+          <ul class="fragment fade-right">
+            <li>
+              <a href="https://css-tricks.com/responsive-images-css/"
+                >CSS Tricks</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images"
+                >MDN web docs</a
+              >
+            </li>
+          </ul>
+        </section>
+        <section>
+          <section data-auto-animate><h2>Fluid Layouts</h2></section>
+          <section data-auto-animate>
+            <h2>Fluid Layouts</h2>
+            <ul>
+              <li>Flexbox</li>
+              <li class="fragment fade-right">CSS Grid</li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Media Queries</h2>
+          </section>
+          <section data-auto-animate>
+            <h2>Desktop first vs Mobile first</h2>
+          </section>
+          <section data-auto-animate>
+            <h2>Desktop first vs Mobile first</h2>
+            <img
+              style="max-width: 100%; max-height: 100%;"
+              src="./img/media-queries.PNG"
+              alt="media queries slide"
+            />
+          </section>
+        </section>
+
+        <section>
+          <h2>Now for some code 🤤</h2>
+        </section>
+
+        <section>
+          <h2>The pillars Responsive Web Design</h2>
+          <ol class="list">
+            <li>Relative Units</li>
+            <li class="fragment fade-right">Responsive Images</li>
+            <li class="fragment fade-right">Fluid Layouts</li>
+            <li class="fragment fade-right">Media Queries</li>
+          </ol>
+        </section>
+
+        <section>
+          Shout out 📣 to Jonas Schmedtmann
+          <img
+            style="
+              border-radius: 50%;
+              width: 120px;
+              display: inline-block;
+              transform: translateY(40px);
+              margin: 0 20px;
+            "
+            src="./img/jonas.jpg"
+            alt="jonas"
+          />
+          <a
+            style="display: block; margin-top: 60px;"
+            href="https://www.udemy.com/course/advanced-css-and-sass/"
+            >Advanced CSS and SASS</a
+          >
+        </section>
+
+        <section><h2>The END. Thank you!!🤗</h2></section>
+      </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+      });
+    </script>
+  </body>
+</html>
